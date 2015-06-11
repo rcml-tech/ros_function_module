@@ -6,27 +6,27 @@ Module for ROS
 *Тестировалось на ROS Indigo Igloo*
 
 ####используемые типы:
-
-std_msgs::Header
-std_msgs::MultiArrayDimension
-std_msgs::Bool
-std_msgs::Byte
-std_msgs::Char
-std_msgs::ColorRGBA
-std_msgs::Float64
-std_msgs::Int64
-std_msgs::String
-std_msgs::Time
-std_msgs::UInt64
-geometry_msgs::Vector3
-geometry_msgs::Accel
-geometry_msgs::Point
-geometry_msgs::Pose
-geometry_msgs::Pose2D
-geometry_msgs::Quaternion
-geometry_msgs::Transform
-geometry_msgs::Twist
-geometry_msgs::Wrench
+| ------- |
+std_msgs::Header |
+std_msgs::MultiArrayDimension |
+std_msgs::Bool |
+std_msgs::Byte |
+std_msgs::Char |
+std_msgs::ColorRGBA |
+std_msgs::Float64 |
+std_msgs::Int64 |
+std_msgs::String |
+std_msgs::Time |
+std_msgs::UInt64 |
+geometry_msgs::Vector3 |
+geometry_msgs::Accel |
+geometry_msgs::Point |
+geometry_msgs::Pose |
+geometry_msgs::Pose2D |
+geometry_msgs::Quaternion |
+geometry_msgs::Transform |
+geometry_msgs::Twist |
+geometry_msgs::Wrench |
 
 
 перед работой необходимо запустить функцию initNode().
@@ -35,6 +35,7 @@ geometry_msgs::Wrench
 Она заверншит работу узла ROS.
 
 ### Список функций модуля
+|--------|---------|
 sendHeader(**topic**, **frame_id**, **seq**, **sec**, **nsec**) | Отправляет в топик **topic** сообщение типа Header. **frame_id** - Идентификатор системы координат, строкового типа. **seq** - ID системы координат. **sec** и **nsec** - секунды и наносекунды временной метки.        
 sendMultiArrayDimension(**topic**, **label**, **size**, **stride**) | Отправляет в топик **topic** сообщение типа MultiArrayDimension. **label** - метка данного измерения, **size** - размер измерения, **stride** - шаг измерения.
 sendBool(**topic**,**data**) | Отправляет в топик **topic** данные **data** типа Bool.
