@@ -23,7 +23,6 @@ void initNode()
 	ros::Rate *loop_rate = new ros::Rate(2);
 	pNode = n;
 	ploop_rate = loop_rate;
-
 };
 
 void clearNode()
