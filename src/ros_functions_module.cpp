@@ -386,6 +386,9 @@ int ROSFunctionModule::endProgram(int uniq_index) {
 }
 void ROSFunctionModule::destroy() {
 	for (unsigned int j = 0; j < COUNT_ROS_FUNCTIONS; ++j) {
+		if (ros_functions[j]->count_params) {
+			delete[] ros_functions[j]->params;
+		}
 		delete ros_functions[j];
 	}
 	delete[] ros_functions;
