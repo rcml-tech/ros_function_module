@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(rosfunction_module)
+project(ros_functions_module)
 
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
@@ -54,7 +54,7 @@ include_directories(
 
 include_directories(include ${catkin_INCLUDE_DIRS})
 
-set(PROJECT rosfunctions_module)
+set(PROJECT ros_functions_module)
 
 
 set(HEADERS module.h)

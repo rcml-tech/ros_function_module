@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <package>
-  <name>ros_function_module</name>
+  <name>ros_functions_module</name>
   <version>0.0.0</version>
-  <description>The ros_function_module package</description>
+  <description>The ros_functions_module package</description>
 
   <!-- One maintainer tag required, multiple allowed, one person per tag --> 
   <!-- Example:  -->
@@ -14,7 +14,6 @@
   <!-- Commonly used license strings: -->
   <!--   BSD, MIT, Boost Software License, GPLv2, GPLv3, LGPLv2.1, LGPLv3 -->
   <license>TODO</license>
-
 
 
   <build_depend>message_generation</build_depend>
@@ -29,6 +28,8 @@
   <run_depend>std_msgs</run_depend>
   <run_depend>geometry_msgs</run_depend>
 
+  <!-- The export tag contains other, unspecified, tags -->
   <export>
+    <!-- Other tools can request additional information be placed here -->
   </export>
 </package>

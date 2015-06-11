@@ -16,6 +16,7 @@
 
 // GLOBAL VARIABLES
 int COUNT_ROS_FUNCTIONS = 22;
+bool is_rosnode_not_started = true;
 
 
 #define ADD_NODE_0_FUNCTION(FUNCTION_NAME) \
@@ -167,6 +168,10 @@ ROSFunctionModule::ROSFunctionModule() {
 FunctionResult* ROSFunctionModule::executeFunction(system_value function_index, void **args) {
 	if ((function_index < 1) || (function_index > COUNT_ROS_FUNCTIONS)) {
 		return NULL;
+	}
+	if (is_rosnode_not_started){
+		initNode();
+		is_rosnode_not_started=false;
 	}
 	variable_value rez = 0;
 	try {
@@ -337,11 +342,17 @@ FunctionResult* ROSFunctionModule::executeFunction(system_value function_index, 
 			break;
 		}
 		case 21:{
-			initNode();
+			if (is_rosnode_not_started){
+				initNode();
+				is_rosnode_not_started=false;
+			}
 			break;
 		}
 		case 22:{
-			clearNode();
+			if (!is_rosnode_not_started){
+				clearNode();
+				is_rosnode_not_started=true;
+			}
 			break;
 		}
 
@@ -375,9 +386,6 @@ int ROSFunctionModule::endProgram(int uniq_index) {
 }
 void ROSFunctionModule::destroy() {
 	for (unsigned int j = 0; j < COUNT_ROS_FUNCTIONS; ++j) {
-		if (ros_functions[j]->count_params) {
-			delete[] ros_functions[j]->params;
-		}
 		delete ros_functions[j];
 	}
 	delete[] ros_functions;
