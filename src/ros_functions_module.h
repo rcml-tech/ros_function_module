@@ -23,9 +23,12 @@ public:
 	FunctionData **getFunctions(unsigned int *count_functions);
 	void *writePC(unsigned int *buffer_length);
 
+	//intepreter - program & lib
+	void readPC(void *buffer, unsigned int buffer_length);
+
 	//intepreter - program
 	FunctionResult* executeFunction(system_value function_index, void **args);
-	int startProgram(int uniq_index, void *buffer, unsigned int buffer_length);
+	int startProgram(int uniq_index);
 	int endProgram(int uniq_index);
 
 	//destructor

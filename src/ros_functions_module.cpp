@@ -378,8 +378,10 @@ void *ROSFunctionModule::writePC(unsigned int *buffer_length) {
 	*buffer_length = 0;
 	return NULL;
 }
-int ROSFunctionModule::startProgram(int uniq_index, void *buffer, unsigned int buffer_length) {
+int TestControlModule::startProgram(int uniq_index) {
 	return 0;
+}
+void TestControlModule::readPC(void *buffer, unsigned int buffer_length) {
 }
 int ROSFunctionModule::endProgram(int uniq_index) {
 	return 0;
