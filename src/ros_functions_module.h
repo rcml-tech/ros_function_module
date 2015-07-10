@@ -9,10 +9,9 @@
 
 class ROSFunctionModule : public FunctionModule {
 	FunctionData **ros_functions;
+  colorPrintfModule_t *colorPrintf;
 
 public:
-
-	colorPrintfModule_t *colorPrintf;
 	ROSFunctionModule();
 
 	//init

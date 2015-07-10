@@ -363,7 +363,7 @@ FunctionResult* ROSFunctionModule::executeFunction(system_value function_index, 
 	};
 };
 
-void ROSFunctionModule::prepare(colorPrintfModule_t *colorPrintf_p, colorPrintfModule_t *colorPrintfVA_p) {
+void ROSFunctionModule::prepare(colorPrintfModule_t *colorPrintf_p, colorPrintfModuleVA_t *colorPrintfVA_p) {
 	colorPrintf = colorPrintf_p;
 }
 FunctionData** ROSFunctionModule::getFunctions(unsigned int *count_functions) {
