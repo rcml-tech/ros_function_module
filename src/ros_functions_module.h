@@ -12,12 +12,12 @@ class ROSFunctionModule : public FunctionModule {
 
 public:
 
-	colorPrintf_t *colorPrintf;
+	colorPrintfModule_t *colorPrintf;
 	ROSFunctionModule();
 
 	//init
 	const char *getUID();
-	void prepare(colorPrintf_t *colorPrintf_p, colorPrintfVA_t *colorPrintfVA_p);
+	void prepare(colorPrintfModule_t *colorPrintf_p, colorPrintfModuleVA_t *colorPrintfVA_p);
 
 	//compiler only
 	FunctionData **getFunctions(unsigned int *count_functions);

@@ -363,7 +363,7 @@ FunctionResult* ROSFunctionModule::executeFunction(system_value function_index, 
 	};
 };
 
-void ROSFunctionModule::prepare(colorPrintf_t *colorPrintf_p, colorPrintfVA_t *colorPrintfVA_p) {
+void ROSFunctionModule::prepare(colorPrintfModule_t *colorPrintf_p, colorPrintfModule_t *colorPrintfVA_p) {
 	colorPrintf = colorPrintf_p;
 }
 FunctionData** ROSFunctionModule::getFunctions(unsigned int *count_functions) {
@@ -377,10 +377,10 @@ void *ROSFunctionModule::writePC(unsigned int *buffer_length) {
 	*buffer_length = 0;
 	return NULL;
 }
-int TestControlModule::startProgram(int uniq_index) {
+int ROSFunctionModule::startProgram(int uniq_index) {
 	return 0;
 }
-void TestControlModule::readPC(void *buffer, unsigned int buffer_length) {
+void ROSFunctionModule::readPC(void *buffer, unsigned int buffer_length) {
 }
 int ROSFunctionModule::endProgram(int uniq_index) {
 	return 0;
