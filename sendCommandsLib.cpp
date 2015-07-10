@@ -11,13 +11,11 @@ ros::NodeHandle *pNode;
 void initNode()
 {
 	// proxy args for ros::init()
-	int targ1=1;
-	char ch1[6]="proxy";
-	char *pch1=ch1;
-	char **targ2=&pch1;
+	int proxy_argc=1;
+	char* proxy_argv[] = {"proxy"};
 	/////////////////////////////
 	if (!ros::isInitialized()){
-		ros::init(targ1, targ2, "rcmlFunctionsNode");
+		ros::init(proxy_argc, proxy_argv, "rcmlFunctionsNode");
 	}
 	ros::NodeHandle *n = new ros::NodeHandle;
 	ros::Rate *loop_rate = new ros::Rate(2);

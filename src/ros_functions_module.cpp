@@ -173,7 +173,6 @@ FunctionResult* ROSFunctionModule::executeFunction(system_value function_index, 
 		initNode();
 		is_rosnode_not_started=false;
 	}
-	variable_value rez = 0;
 	try {
 		switch (function_index) {
 		case 1: {
@@ -357,7 +356,7 @@ FunctionResult* ROSFunctionModule::executeFunction(system_value function_index, 
 		}
 
 	};
-		return new FunctionResult(1, rez);
+		return new FunctionResult(1);
 	}
 	catch (...){
 		return new FunctionResult(0);
@@ -378,8 +377,10 @@ void *ROSFunctionModule::writePC(unsigned int *buffer_length) {
 	*buffer_length = 0;
 	return NULL;
 }
-int ROSFunctionModule::startProgram(int uniq_index, void *buffer, unsigned int buffer_length) {
+int TestControlModule::startProgram(int uniq_index) {
 	return 0;
+}
+void TestControlModule::readPC(void *buffer, unsigned int buffer_length) {
 }
 int ROSFunctionModule::endProgram(int uniq_index) {
 	return 0;
