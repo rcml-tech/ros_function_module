@@ -69,9 +69,15 @@ clearNode() | Завершает работу узла ROS.
 workspace_folder/         -- WORKSPACE
   src/                    -- SOURCE SPACE
     ros_function_module/  -- Каталог исходных файлов модуля для RCML
+      sendCommandsLib.cpp
+      rosHeaders.h
       ...
+      src
+      	...
 ```
 
+- [Руководство по установке ROS на Ubuntu](http://wiki.ros.org/indigo/Installation/Ubuntu)
+- [Информация о настройке окружения ROS](http://wiki.ros.org/ROS/Tutorials/InstallingandConfiguringROSEnvironment)
 
 
 
