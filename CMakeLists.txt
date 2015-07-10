@@ -65,6 +65,8 @@ set(HEADERS function_module.h)
 set(SOURCE_EXE ros_functions_module.cpp)
 set(SOURCE_LIB sendCommandsLib.cpp )
 
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -m32 -fPIC")
+
 add_library( sendCommandsLib STATIC ${SOURCE_LIB}  )
 
 add_library(ros_module SHARED src/ros_functions_module.cpp)
