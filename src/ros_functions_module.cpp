@@ -8,8 +8,8 @@
 #include <cstddef>
 #include <string>
 
-#include "module_headers/module.h"
-#include "module_headers/function_module.h"
+#include "module.h"
+#include "function_module.h"
 
 #include "ros_functions_module.h"
 #include "sendCommandsLib.h"
