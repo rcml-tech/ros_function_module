@@ -46,7 +46,7 @@
 #include <geometry_msgs/TransformStamped.h>
 #include <geometry_msgs/TwistStamped.h>
 #include <geometry_msgs/WrenchStamped.h>
-//////// WithCovariance 
+//////// WithCovariance
 #include <geometry_msgs/AccelWithCovariance.h>
 #include <geometry_msgs/PoseWithCovariance.h>
 #include <geometry_msgs/TwistWithCovariance.h>
@@ -73,17 +73,4 @@
 #include <trajectory_msgs/MultiDOFJointTrajectoryPoint.h>
 #include <trajectory_msgs/MultiDOFJointTrajectory.h>
 
-#endif // ROSHEADERS_H
-
-
-
-
-
-
-
-
-
-
-
-
-
+#endif  // ROSHEADERS_H
