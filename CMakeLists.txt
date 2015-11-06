@@ -46,7 +46,7 @@ catkin_package(
 include_directories(
   ${catkin_INCLUDE_DIRS}
 )
-include_directories( "/var/lib/jenkins/workspace/module_headers/" )
+include_directories( "/var/lib/jenkins/workspace/module_headers/000" )
 
 
 #############
