@@ -11,11 +11,19 @@ class ROSFunctionModule : public FunctionModule {
   FunctionData **ros_functions;
   colorPrintfModule_t *colorPrintf;
 
+#ifndef FUNCTION_MODULE_H_000
+  ModuleInfo *mi;
+#endif
+
  public:
   ROSFunctionModule();
 
   // init
+#ifdef FUNCTION_MODULE_H_000
   const char *getUID();
+#else
+  const struct ModuleInfo &getModuleInfo();
+#endif
   void prepare(colorPrintfModule_t *colorPrintf_p,
                colorPrintfModuleVA_t *colorPrintfVA_p);
 

@@ -1,0 +1,90 @@
+Установка ROS
+
+1. Устанавливаем путь к репозиторию:
+
+``` bash
+	$ sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
+```
+
+2. Получаем ключи:
+
+``` bash
+	$ sudo apt-key adv --keyserver hkp://pool.sks-keyservers.net --recv-key 0xB01FA116
+```
+
+3. Устанавливаем пакеты из репозитория.
+
+3.1 Обновим apt-get:
+
+``` bash
+	$ sudo apt-get update
+```
+
+3.2 Выберем необходимую сборку:
+
+  - Desktop-Full: ROS, rqt, rviz, robot-generic libraries, 2D/3D simulators, navigation and 2D/3D perception
+``` bash
+    $ sudo apt-get install ros-jade-desktop-full
+```
+
+ - Desktop Install: ROS, rqt, rviz, and robot-generic libraries
+``` bash
+    $ sudo apt-get install ros-jade-desktop
+```
+
+ - ROS-Base: (Bare Bones) ROS package, build, and communication libraries. Без GUI.
+``` bash
+    $ sudo apt-get install ros-jade-ros-base
+```
+
+ - Установка отдельного пакета:
+``` bash
+    $ sudo apt-get install ros-jade-PACKAGE
+```
+
+ - Чтобы найти пакет можно использовать:
+``` bash
+	$ apt-cache search ros-jade
+```
+
+4. Инициализация rosdep
+
+rosdep устанавливает зависимости пакетов и он необходим для запуска ключевых компонентов ROS.
+``` bash
+	$ sudo rosdep init
+	$ rosdep update
+```
+
+5. Установка окружения
+
+Переменные окружения ROS будут автоматически добавляться к сессии bash каждый раз при ее запуске
+``` bash
+	$ echo "source /opt/ros/jade/setup.bash" >> ~/.bashrc
+	$ source ~/.bashrc
+```
+Если необходимо только изменить окружение текущей сессии:
+``` bash
+	$ source /opt/ros/jade/setup.bash
+```
+
+Теперь все готово для работы ROS.
+
+Команды ROS:
+
+1. Для запуска системы необходимо в отдельном терминале запустить roscore
+``` bash
+	$ roscore
+```
+
+Другие команды:
+ - rosnode - рабта с узлами ROS
+ - rosrun - запуск узла из указанного пакета
+ - rostopic - работа с топиками ROS. Отправка и прием сообщений.
+ - rosmsg - информация о типах сообщений ROS
+ - rosservice - работа со службами ROS. Почти как топики, только с обратной связью.
+ - rossrv - информация о типах служб ROS
+ - rosparam - работа с параметрами ROS Parameter server.
+ - roslaunch - запуск нескольких узлов.
+ - rosed - изменение файлов в пакетах
+
+
