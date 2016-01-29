@@ -46,7 +46,7 @@ catkin_package(
 include_directories(
   ${catkin_INCLUDE_DIRS}
 )
-include_directories( "/var/lib/jenkins/workspace/module_headers/000" )
+include_directories( "/var/lib/jenkins/workspace/module_headers/100" )
 
 
 #############
@@ -54,7 +54,7 @@ include_directories( "/var/lib/jenkins/workspace/module_headers/000" )
 #############
 
 include_directories(include ${catkin_INCLUDE_DIRS})
-include_directories( "/var/lib/jenkins/workspace/module_headers/" )
+include_directories( "/var/lib/jenkins/workspace/module_headers" )
 
 set(PROJECT ros_functions_module)
 

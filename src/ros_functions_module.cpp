@@ -14,9 +14,13 @@
 #include "ros_functions_module.h"
 #include "sendCommandsLib.h"
 
+#include "build_number.h"
+
 // GLOBAL VARIABLES
 int COUNT_ROS_FUNCTIONS = 22;
 bool is_rosnode_not_started = true;
+
+#define IID "RCT.ROS_functions_module_v100"
 
 #define ADD_NODE_0_FUNCTION(FUNCTION_NAME)                       \
   \
@@ -242,6 +246,12 @@ ADD_NODE_0_FUNCTION("initNode") \
 ADD_NODE_0_FUNCTION("clearNode");
 
 ROSFunctionModule::ROSFunctionModule() {
+  mi = new ModuleInfo;
+  mi->uid = IID;
+  mi->mode = ModuleInfo::Modes::PROD;
+  mi->version = BUILD_NUMBER;
+  mi->digest = NULL;
+
   ros_functions = new FunctionData *[COUNT_ROS_FUNCTIONS];
   system_value function_id = 0;
 
@@ -445,9 +455,9 @@ FunctionResult *ROSFunctionModule::executeFunction(system_value function_index,
         break;
       }
     };
-    return new FunctionResult(1);
+    return new FunctionResult(FunctionResult::Types::VALUE, 0);
   } catch (...) {
-    return new FunctionResult(0);
+    return new FunctionResult(FunctionResult::Types::EXCEPTION);
   };
 };
 
@@ -459,7 +469,9 @@ FunctionData **ROSFunctionModule::getFunctions(unsigned int *count_functions) {
   *count_functions = COUNT_ROS_FUNCTIONS;
   return ros_functions;
 };
-const char *ROSFunctionModule::getUID() { return "rosfunction_dll"; };
+
+const struct ModuleInfo &ROSFunctionModule::getModuleInfo() { return *mi; }
+
 void *ROSFunctionModule::writePC(unsigned int *buffer_length) {
   *buffer_length = 0;
   return NULL;
@@ -468,6 +480,7 @@ int ROSFunctionModule::startProgram(int uniq_index) { return 0; }
 void ROSFunctionModule::readPC(void *buffer, unsigned int buffer_length) {}
 int ROSFunctionModule::endProgram(int uniq_index) { return 0; }
 void ROSFunctionModule::destroy() {
+  delete mi;
   for (unsigned int j = 0; j < COUNT_ROS_FUNCTIONS; ++j) {
     if (ros_functions[j]->count_params) {
       delete[] ros_functions[j]->params;
@@ -476,6 +489,10 @@ void ROSFunctionModule::destroy() {
   }
   delete[] ros_functions;
   delete this;
+};
+
+PREFIX_FUNC_DLL unsigned short getFunctionModuleApiVersion() {
+  return FUNCTION_MODULE_API_VERSION;
 };
 
 FunctionModule *getFunctionModuleObject() { return new ROSFunctionModule(); };
