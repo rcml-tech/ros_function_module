@@ -46,7 +46,7 @@ catkin_package(
 include_directories(
   ${catkin_INCLUDE_DIRS}
 )
-include_directories( "/var/lib/jenkins/workspace/module_headers/100" )
+include_directories( "~/repo/module_headers/100" )
 
 
 #############
@@ -54,7 +54,6 @@ include_directories( "/var/lib/jenkins/workspace/module_headers/100" )
 #############
 
 include_directories(include ${catkin_INCLUDE_DIRS})
-include_directories( "/var/lib/jenkins/workspace/module_headers" )
 
 set(PROJECT ros_functions_module)
 
@@ -65,7 +64,7 @@ set(HEADERS function_module.h)
 set(SOURCE_EXE ros_functions_module.cpp)
 set(SOURCE_LIB sendCommandsLib.cpp )
 
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fPIC")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fPIC -std=c++11")
 
 add_library( sendCommandsLib STATIC ${SOURCE_LIB}  )
 
