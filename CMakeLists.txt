@@ -65,7 +65,7 @@ set(HEADERS function_module.h)
 set(SOURCE_EXE ros_functions_module.cpp)
 set(SOURCE_LIB sendCommandsLib.cpp )
 
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fPIC -DBUILD_NUMBER=${BUILD_NUMBER}")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fPIC")
 
 add_library( sendCommandsLib STATIC ${SOURCE_LIB}  )
 

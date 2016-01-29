@@ -14,11 +14,12 @@
 #include "ros_functions_module.h"
 #include "sendCommandsLib.h"
 
+#include "build_number.h"
+
 // GLOBAL VARIABLES
 int COUNT_ROS_FUNCTIONS = 22;
 bool is_rosnode_not_started = true;
 
-#define BUILD_NUMBER 1
 #define IID "RCT.ROS_functions_module_v100"
 
 #define ADD_NODE_0_FUNCTION(FUNCTION_NAME)                       \
