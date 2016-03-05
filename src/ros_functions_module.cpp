@@ -492,7 +492,7 @@ void ROSFunctionModule::destroy() {
 };
 
 PREFIX_FUNC_DLL unsigned short getFunctionModuleApiVersion() {
-  return FUNCTION_MODULE_API_VERSION;
+  return MODULE_API_VERSION;
 };
 
 FunctionModule *getFunctionModuleObject() { return new ROSFunctionModule(); };
